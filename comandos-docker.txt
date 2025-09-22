@@ -1,0 +1,8 @@
+# Rodar container Postgre na versão 16.10
+docker run --name librarydb -p 5432:5432 -e POSTGRES_PASSWORD=postgres -e POSTGRES_USER=postgres -e POSTGRES_DB=library  postgres:16.10
+#Obs: ESse comando serve apenas para criar o container pela primeira vez, caso stop e queira subir novamente, utilizar o docker start
+
+
+#Parando um container do docker pelo nome que damos
+docker stop librarydb
+#Obs: para restartar basta trocar o stop por start
