@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: libraryapi
+  datasource:
+    url: jdbc:postgresql://localhost:5432/library
+    username: postgres
+    password: root
+    driver-class-name: org.postgresql.Driver
+      # Novas configurações do JPA/Hibernate
+    jpa:
+        # Dialeto específico do PostgreSQL
+      database-platform: org.hibernate.dialect.PostgreSQLDialect
+        # Gerenciamento automático do esquema (muito usado em dev)
+      hibernate:
+          dl-auto: update # <--- A configuração mais importante para desenvolvimento!
+
+        # Configurações para depuração (ver o SQL no console)
+      show-sql: true
+      properties:
+        hibernate:
+          format_sql: true
+
