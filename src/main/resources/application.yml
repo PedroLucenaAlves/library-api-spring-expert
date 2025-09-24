@@ -7,13 +7,12 @@ spring:
     password: root
     driver-class-name: org.postgresql.Driver
 
-    jpa:
-
-      database-platform: org.hibernate.dialect.PostgreSQLDialect
-      hibernate:
-          dl-auto: update
-      show-sql: true
-      properties:
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+        ddl-auto: update #cria o banco e mesmo quando derrubarmos a app, o banco ficaria de pe (create-drop é usado para testes)
+    show-sql: true
+    properties:
         hibernate:
           format_sql: true
 

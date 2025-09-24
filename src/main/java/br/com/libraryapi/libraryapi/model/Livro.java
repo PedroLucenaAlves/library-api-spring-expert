@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.math.BigDecimal;
 import java.util.UUID;
 
 @Entity
@@ -33,11 +34,12 @@ public class Livro {
     private GeneroLivro genero;
 
     @Column(name = "preco" , precision = 18, scale = 2)
-    private Double preco;
+    private BigDecimal preco;
 
     //relacionamento de chave estrangeira
     @ManyToOne //muitos livros para um autor (muitos para um)
     @JoinColumn(name = "id_autor")
-    private UUID idAutor;
+    private Autor autor; //como a nossa referencia de chave estrangeira é autor, precisamos que o tipo seja Autor para referenciar
+    //a entidade autor por completo e não UUID
 
 }
