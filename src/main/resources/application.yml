@@ -6,15 +6,12 @@ spring:
     username: postgres
     password: root
     driver-class-name: org.postgresql.Driver
-      # Novas configurações do JPA/Hibernate
-    jpa:
-        # Dialeto específico do PostgreSQL
-      database-platform: org.hibernate.dialect.PostgreSQLDialect
-        # Gerenciamento automático do esquema (muito usado em dev)
-      hibernate:
-          dl-auto: update # <--- A configuração mais importante para desenvolvimento!
 
-        # Configurações para depuração (ver o SQL no console)
+    jpa:
+
+      database-platform: org.hibernate.dialect.PostgreSQLDialect
+      hibernate:
+          dl-auto: update
       show-sql: true
       properties:
         hibernate:
